@@ -6,7 +6,7 @@ import { MatCalendarCellCssClasses } from '@angular/material';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnChanges{
+export class AppComponent implements OnInit, OnChanges {
   selectedDate: any;
 
   datesToHighlight = [];
@@ -14,12 +14,13 @@ export class AppComponent implements OnInit, OnChanges{
   constructor() {}
 
   ngOnInit() {}
+  ngOnChanges() {}
 
   onSelect(event) {
     this.selectedDate = event;
     this.datesToHighlight.push(this.selectedDate);
   }
-  ngOnChanges(){}
+
   dateClass() {
     return (date: Date): MatCalendarCellCssClasses => {
       const highlightDate = this.datesToHighlight
